@@ -8,52 +8,110 @@ class UniqueElementsContainer:
 
     def add_elements(self, *args):
         for arg in args:
-            if arg not in self.container:
-                self.container.add(arg)
-                print(f"{arg} added to the container")
-            else:
-                print(f"{arg} already exists in the container")
+            try:
+                if type(arg) != str:
+                    a = float(arg)
+                    if a not in self.container:
+                        self.container.add(a)
+                        print(f"{arg} added to the container")
+                    else:
+                        print(f"{arg} already exists in the container")
+                else:
+                    if re.findall(r'([0-9]).*', str(arg)):
+                        if re.findall(r'([\\"].*)', arg):
+                            self.container.add(arg)
+                            print(f"{arg} added to the container")
+                            continue
+                        a = float(arg)
+                        if a not in self.container:
+                            self.container.add(a)
+                            print(f"{arg} added to the container")
+                        else:
+                            print(f"{arg} already exists in the container")
+                    else:
+                        self.container.add(arg)
+                        print(f"{arg} added to the container")
+            except:
+                print("Enter correct parameters in this command")
 
     def remove_element(self, key):
-        if key in self.container:
-            self.container.remove(key)
-            print(f"{key} removed from the container")
-        else:
-            print(f"{key} does not exist in the container")
+        try:
+            if type(key) != str:
+                a = float(key)
+                if a in self.container:
+                    self.container.remove(a)
+                    print(f"{key} removed to the container")
+                else:
+                    print(f"{key} doesn't exist in the container")
+            else:
+                if re.findall(r'([0-9]).*', str(key)):
+                    if re.findall(r'([\\"].*)', key):
+                        self.container.remove(key)
+                        print(f"{key} removed to the container")
+                    a = float(key)
+                    if a in self.container:
+                        self.container.remove(a)
+                        print(f"{key} removed to the container")
+                    else:
+                        print(f"{key} doesn't exist in the container")
+                else:
+                    self.container.remove(key)
+                    print(f"{key} removed to the container")
+        except:
+            print("Enter correct parameters in this command")
 
     def find_elements(self, *args):
-        found = False
-        for arg in args:
-            if arg in self.container:
-                print(f"{arg} found in the container")
-                found = True
-        if not found:
-            print("No such elements")
+        try:
+            found = False
+            for arg in args:
+                a = float(arg)
+                if a in self.container:
+                    print(f"{arg} found in the container")
+                    found = True
+                    break
+            if not found:
+                print("No such elements")
+        except:
+            print("Finding only numbers")
 
     def list_elements(self):
-        print("Container elements:")
-        for elem in self.container:
-            print(elem)
+        if len(self.container) > 0:
+            print("Container elements:")
+            for elem in self.container:
+                print(elem)
+        else:
+            print("Empty container")
 
     def grep_elements(self, regex):
-        pattern = re.compile(regex)
+        a = str(regex)
+       # pattern = re.compile(a)
         found = False
         for elem in self.container:
-            if pattern.search(elem):
+            if re.findall(a, str(elem)):
                 print(elem)
                 found = True
         if not found:
             print("No such elements")
 
     def save_container(self, filename):
-        with open(filename, "w") as f:
-            json.dump(list(self.container), f)
-        print(f"Container saved to {filename}")
+        try:
+            with open(filename, "w") as f:
+                json.dump(list(self.container), f)
+            print(f"Container saved to {filename}")
+        except:
+            print("Error in saving")
 
     def load_container(self, filename):
-        with open(filename, "r") as f:
-            self.container = set(json.load(f))
-        print(f"Container loaded from {filename}")
+        a = self.container.copy()
+        try:
+            with open(filename, "r") as f:
+                b = set(json.load(f))
+                self.container = a.union(b)
+            print(f"Container loaded from {filename}")
+        except:
+            print("Error in loading")
+
+    """def switch_container(self):"""
 
 
 class CLI:
@@ -67,6 +125,9 @@ class CLI:
             if username not in self.containers:
                 self.containers[username] = UniqueElementsContainer()
                 print(f"New container created for user {username}")
+                if input("Do you want to load any existing container? (y/n) ").strip().lower() == "y":
+                    filenames = input("Enter file name  ")
+                    self.containers[username].load_container(filenames)
             else:
                 print(f"Container loaded for user {username}")
 
@@ -76,18 +137,37 @@ class CLI:
                 if tokens[0] == "add":
                     self.containers[username].add_elements(*tokens[1:])
                 elif tokens[0] == "remove":
-                    self.containers[username].remove_element(tokens[1])
+                    if len(tokens) > 1:
+                        self.containers[username].remove_element(tokens[1])
+                    else:
+                        print("Add elem to the command syntax")
                 elif tokens[0] == "find":
-                    self.containers[username].find_elements(*tokens[1:])
+                    if len(tokens) > 1:
+                        self.containers[username].find_elements(*tokens[1:])
+                    else:
+                        print("Add elements to command")
                 elif tokens[0] == "list":
                     self.containers[username].list_elements()
                 elif tokens[0] == "grep":
-                    self.containers[username].grep_elements(tokens[1])
+                    if len(tokens) > 1:
+                        self.containers[username].grep_elements(tokens[1])
+                    else:
+                        print("Add elements to command")
                 elif tokens[0] == "save":
-                    self.containers[username].save_container(tokens[1])
+                    if len(tokens) > 1:
+                        self.containers[username].save_container(tokens[1])
+                    else:
+                        print("Add filename to the command syntax")
                 elif tokens[0] == "load":
-                    self.containers[username].load_container(tokens[1])
+                    if len(tokens) > 1:
+                        self.containers[username].load_container(tokens[1])
+                    else:
+                        print("Add filename to the command syntax")
                 elif tokens[0] == "switch":
+                    if input("Do you want to save changes in this container? (y/n) ").strip().lower() == "y":
+                        filename = input("Enter file name  ")
+                        self.containers[username].save_container(filename)
+                    self.containers.clear()
                     print("Switching user...")
                     break
                 else:
