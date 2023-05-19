@@ -1,0 +1,602 @@
+{
+  "source": {
+    "__name__": "T",
+    "__bases__": {
+      "type": "tuple",
+      "source": [
+        {
+          "type": "type",
+          "source": {
+            "__name__": "t",
+            "__bases__": {
+              "type": "tuple",
+              "source": []
+            },
+            "__dict__": {
+              "__module__": "__main__",
+              "lol": {
+                "type": "staticmethod",
+                "source": {
+                  "type": "function",
+                  "source": {
+                    "__code__": {
+                      "type": "code",
+                      "source": {
+                        "co_argcount": 0,
+                        "co_cellvars": {
+                          "type": "tuple",
+                          "source": []
+                        },
+                        "co_code": {
+                          "type": "bytes",
+                          "source": [
+                            151,
+                            0,
+                            100,
+                            1,
+                            83,
+                            0
+                          ]
+                        },
+                        "co_consts": {
+                          "type": "tuple",
+                          "source": [
+                            null,
+                            "lol"
+                          ]
+                        },
+                        "co_exceptiontable": {
+                          "type": "bytes",
+                          "source": []
+                        },
+                        "co_filename": "C:\\Users\\HP\\PycharmProjects\\pythonProject5\\main.py",
+                        "co_firstlineno": 30,
+                        "co_flags": 3,
+                        "co_freevars": {
+                          "type": "tuple",
+                          "source": []
+                        },
+                        "co_kwonlyargcount": 0,
+                        "co_lnotab": {
+                          "type": "bytes",
+                          "source": [
+                            2,
+                            2
+                          ]
+                        },
+                        "co_name": "lol",
+                        "co_names": {
+                          "type": "tuple",
+                          "source": []
+                        },
+                        "co_nlocals": 0,
+                        "co_posonlyargcount": 0,
+                        "co_qualname": "t.lol",
+                        "co_stacksize": 1,
+                        "co_varnames": {
+                          "type": "tuple",
+                          "source": []
+                        }
+                      }
+                    },
+                    "__globals__": {
+                      "type": "dict",
+                      "source": []
+                    },
+                    "__name__": "lol",
+                    "__defaults__": null,
+                    "__closure__": null
+                  }
+                }
+              },
+              "clsmet": {
+                "type": "classmethod",
+                "source": {
+                  "type": "function",
+                  "source": {
+                    "__code__": {
+                      "type": "code",
+                      "source": {
+                        "co_argcount": 1,
+                        "co_cellvars": {
+                          "type": "tuple",
+                          "source": []
+                        },
+                        "co_code": {
+                          "type": "bytes",
+                          "source": [
+                            151,
+                            0,
+                            124,
+                            0,
+                            106,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            83,
+                            0
+                          ]
+                        },
+                        "co_consts": {
+                          "type": "tuple",
+                          "source": [
+                            null
+                          ]
+                        },
+                        "co_exceptiontable": {
+                          "type": "bytes",
+                          "source": []
+                        },
+                        "co_filename": "C:\\Users\\HP\\PycharmProjects\\pythonProject5\\main.py",
+                        "co_firstlineno": 34,
+                        "co_flags": 3,
+                        "co_freevars": {
+                          "type": "tuple",
+                          "source": []
+                        },
+                        "co_kwonlyargcount": 0,
+                        "co_lnotab": {
+                          "type": "bytes",
+                          "source": [
+                            2,
+                            2
+                          ]
+                        },
+                        "co_name": "clsmet",
+                        "co_names": {
+                          "type": "tuple",
+                          "source": [
+                            "_LOL"
+                          ]
+                        },
+                        "co_nlocals": 1,
+                        "co_posonlyargcount": 0,
+                        "co_qualname": "t.clsmet",
+                        "co_stacksize": 1,
+                        "co_varnames": {
+                          "type": "tuple",
+                          "source": [
+                            "cls"
+                          ]
+                        }
+                      }
+                    },
+                    "__globals__": {
+                      "type": "dict",
+                      "source": []
+                    },
+                    "__name__": "clsmet",
+                    "__defaults__": null,
+                    "__closure__": null
+                  }
+                }
+              },
+              "f": {
+                "type": "function",
+                "source": {
+                  "__code__": {
+                    "type": "code",
+                    "source": {
+                      "co_argcount": 1,
+                      "co_cellvars": {
+                        "type": "tuple",
+                        "source": []
+                      },
+                      "co_code": {
+                        "type": "bytes",
+                        "source": [
+                          151,
+                          0,
+                          100,
+                          1,
+                          83,
+                          0
+                        ]
+                      },
+                      "co_consts": {
+                        "type": "tuple",
+                        "source": [
+                          null,
+                          1
+                        ]
+                      },
+                      "co_exceptiontable": {
+                        "type": "bytes",
+                        "source": []
+                      },
+                      "co_filename": "C:\\Users\\HP\\PycharmProjects\\pythonProject5\\main.py",
+                      "co_firstlineno": 38,
+                      "co_flags": 3,
+                      "co_freevars": {
+                        "type": "tuple",
+                        "source": []
+                      },
+                      "co_kwonlyargcount": 0,
+                      "co_lnotab": {
+                        "type": "bytes",
+                        "source": [
+                          2,
+                          1
+                        ]
+                      },
+                      "co_name": "f",
+                      "co_names": {
+                        "type": "tuple",
+                        "source": []
+                      },
+                      "co_nlocals": 1,
+                      "co_posonlyargcount": 0,
+                      "co_qualname": "t.f",
+                      "co_stacksize": 1,
+                      "co_varnames": {
+                        "type": "tuple",
+                        "source": [
+                          "self"
+                        ]
+                      }
+                    }
+                  },
+                  "__globals__": {
+                    "type": "dict",
+                    "source": []
+                  },
+                  "__name__": "f",
+                  "__defaults__": null,
+                  "__closure__": null
+                }
+              },
+              "_LOL": 1,
+              "__doc__": null
+            }
+          }
+        }
+      ]
+    },
+    "__dict__": {
+      "__module__": "__main__",
+      "_X": 11,
+      "A": 10,
+      "B": 11,
+      "C": 14,
+      "tst4": {
+        "type": "staticmethod",
+        "source": {
+          "type": "function",
+          "source": {
+            "__code__": {
+              "type": "code",
+              "source": {
+                "co_argcount": 0,
+                "co_cellvars": {
+                  "type": "tuple",
+                  "source": []
+                },
+                "co_code": {
+                  "type": "bytes",
+                  "source": [
+                    151,
+                    0,
+                    100,
+                    1,
+                    116,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    106,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    122,
+                    5,
+                    0,
+                    0,
+                    83,
+                    0
+                  ]
+                },
+                "co_consts": {
+                  "type": "tuple",
+                  "source": [
+                    null,
+                    123
+                  ]
+                },
+                "co_exceptiontable": {
+                  "type": "bytes",
+                  "source": []
+                },
+                "co_filename": "C:\\Users\\HP\\PycharmProjects\\pythonProject5\\main.py",
+                "co_firstlineno": 51,
+                "co_flags": 3,
+                "co_freevars": {
+                  "type": "tuple",
+                  "source": []
+                },
+                "co_kwonlyargcount": 0,
+                "co_lnotab": {
+                  "type": "bytes",
+                  "source": [
+                    2,
+                    2
+                  ]
+                },
+                "co_name": "tst4",
+                "co_names": {
+                  "type": "tuple",
+                  "source": [
+                    "T",
+                    "_X"
+                  ]
+                },
+                "co_nlocals": 0,
+                "co_posonlyargcount": 0,
+                "co_qualname": "T.tst4",
+                "co_stacksize": 2,
+                "co_varnames": {
+                  "type": "tuple",
+                  "source": []
+                }
+              }
+            },
+            "__globals__": {
+              "type": "dict",
+              "source": [
+                [
+                  "T",
+                  "T"
+                ]
+              ]
+            },
+            "__name__": "tst4",
+            "__defaults__": null,
+            "__closure__": null
+          }
+        }
+      },
+      "__init__": {
+        "type": "function",
+        "source": {
+          "__code__": {
+            "type": "code",
+            "source": {
+              "co_argcount": 1,
+              "co_cellvars": {
+                "type": "tuple",
+                "source": []
+              },
+              "co_code": {
+                "type": "bytes",
+                "source": [
+                  151,
+                  0,
+                  100,
+                  1,
+                  124,
+                  0,
+                  95,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  100,
+                  0,
+                  83,
+                  0
+                ]
+              },
+              "co_consts": {
+                "type": "tuple",
+                "source": [
+                  null,
+                  10
+                ]
+              },
+              "co_exceptiontable": {
+                "type": "bytes",
+                "source": []
+              },
+              "co_filename": "C:\\Users\\HP\\PycharmProjects\\pythonProject5\\main.py",
+              "co_firstlineno": 55,
+              "co_flags": 3,
+              "co_freevars": {
+                "type": "tuple",
+                "source": []
+              },
+              "co_kwonlyargcount": 0,
+              "co_lnotab": {
+                "type": "bytes",
+                "source": [
+                  2,
+                  1
+                ]
+              },
+              "co_name": "__init__",
+              "co_names": {
+                "type": "tuple",
+                "source": [
+                  "xy"
+                ]
+              },
+              "co_nlocals": 1,
+              "co_posonlyargcount": 0,
+              "co_qualname": "T.__init__",
+              "co_stacksize": 2,
+              "co_varnames": {
+                "type": "tuple",
+                "source": [
+                  "self"
+                ]
+              }
+            }
+          },
+          "__globals__": {
+            "type": "dict",
+            "source": []
+          },
+          "__name__": "__init__",
+          "__defaults__": null,
+          "__closure__": null
+        }
+      },
+      "inf": {
+        "type": "function",
+        "source": {
+          "__code__": {
+            "type": "code",
+            "source": {
+              "co_argcount": 1,
+              "co_cellvars": {
+                "type": "tuple",
+                "source": []
+              },
+              "co_code": {
+                "type": "bytes",
+                "source": [
+                  151,
+                  0,
+                  116,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  124,
+                  0,
+                  106,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  100,
+                  1,
+                  124,
+                  0,
+                  106,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  166,
+                  3,
+                  0,
+                  0,
+                  171,
+                  3,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  100,
+                  0,
+                  83,
+                  0
+                ]
+              },
+              "co_consts": {
+                "type": "tuple",
+                "source": [
+                  null,
+                  " "
+                ]
+              },
+              "co_exceptiontable": {
+                "type": "bytes",
+                "source": []
+              },
+              "co_filename": "C:\\Users\\HP\\PycharmProjects\\pythonProject5\\main.py",
+              "co_firstlineno": 58,
+              "co_flags": 3,
+              "co_freevars": {
+                "type": "tuple",
+                "source": []
+              },
+              "co_kwonlyargcount": 0,
+              "co_lnotab": {
+                "type": "bytes",
+                "source": [
+                  2,
+                  1
+                ]
+              },
+              "co_name": "inf",
+              "co_names": {
+                "type": "tuple",
+                "source": [
+                  "print",
+                  "xy",
+                  "_LOL"
+                ]
+              },
+              "co_nlocals": 1,
+              "co_posonlyargcount": 0,
+              "co_qualname": "T.inf",
+              "co_stacksize": 5,
+              "co_varnames": {
+                "type": "tuple",
+                "source": [
+                  "self"
+                ]
+              }
+            }
+          },
+          "__globals__": {
+            "type": "dict",
+            "source": []
+          },
+          "__name__": "inf",
+          "__defaults__": null,
+          "__closure__": null
+        }
+      },
+      "__doc__": null
+    }
+  },
+  "type": "type"
+}
