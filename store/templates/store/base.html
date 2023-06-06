@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Vet Clinic{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        #header {
+            background: blue;
+            color: #fff;
+            padding: 40px;
+
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #header .logo {
+            font-size: 28px;
+            color: #fff;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        #header a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        #subheader {
+            background: linear-gradient(to top, #ffffff 46%, blue 146%);
+            color: #8B0000;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #subheader .time {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        #subheader .time span {
+            color: #333;
+            margin-right: 20px;
+        }
+
+        #content {
+            padding: 40px;
+        }
+
+        .cart {
+            margin-right: 200px;
+            font-size: 20px;
+        }
+
+        .cart a {
+            color: #191970;
+        }
+
+        .cart a:hover {
+            color: #000000;
+        }
+
+        #footer {
+            background: #333;
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <a href="/" class="logo">Vet Clinic by Pasha</a>
+        {% if user.is_superuser %}
+        <a href="/statistic/">Statistic</a>
+        {% endif %}
+    </div>
+    <div id="subheader">
+        <div class="cart">
+            {% if user.is_authenticated %}
+            {% with total_items=cart|length %}
+            {% if cart|length > 0 %}
+            In cart:
+            <a class="button4" href="{% url 'cart:cart_detail' %}">{{ total_items }} pcs, {{ cart.get_total_price }}</a>
+            {% else %}
+            Cart empty
+            {% endif %}
+            {% endwith %}
+            {% endif %}
+        </div>
+        <div class="time">
+            <span>Current Date: <span id='date'></span></span>
+            <span>Current time: <span id='time'></span></span>
+            <span>Current time zone: <span id='zone'></span></span>
+        </div>
+        <div class="login">
+            {% if user.is_authenticated %}
+            | {{ user.username }} |
+            <a class="button4" href="{% url 'login:logout' %}">Log out</a>
+            {% else %}
+            <a class="button4" href="{% url 'login:login' %}">Sign in</a>
+            <a class="button4" href="{% url 'login:register' %}">Sign up</a>
+            {% endif %}
+        </div>
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div id="footer">
+        &copy; 2023 VetClinic. Founded by Pavel Pavlutkin. All rights reserved.
+    </div>
+
+    <script>
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        let mm = today.getMonth() + 1; // Months start at 0!
+        let dd = today.getDate();
+        let h = today.getHours();
+        if (h < 10)
+            h = '0' + h;
+        let min = today.getMinutes();
+        if (min < 10)
+            min = '0' + min;
+        let sec = today.getSeconds();
+        if (sec < 10)
+            sec = '0' + sec;
+
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+
+        let formattedToday = dd + '/' + mm + '/' + yyyy;
+        let time = h + ":" + min + ":" + sec;
+        let tz = -(new Date().getTimezoneOffset() / 60);
+        if (tz > 0) {
+            tz = "+" + tz;
+        }
+        tz = "UTC" + tz;
+        document.getElementById('date').innerHTML = formattedToday;
+        document.getElementById('time').innerHTML = time;
+        document.getElementById('zone').innerHTML = tz;
+    </script>
+</body>
+</html>
